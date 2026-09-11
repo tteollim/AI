@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마음잇다 - AI 에이전트</title>
+  <style>
+    /* 기본 스타일 초기화 및 다크 테마 설정 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: #121316; /* 이미지와 유사한 어두운 배경 */
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 1. 상단 네비게이션 헤더 */
+    header {
+      width: 100%;
+      background-color: #121316;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-container {
+      display: flex;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 6px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-btn {
+      padding: 8px 20px;
+      border-radius: 20px;
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-btn.active {
+      background-color: #2b3441; /* 활성화된 탭 배경 */
+      color: #ffffff;
+    }
+
+    .nav-btn:hover {
+      color: #ffffff;
+    }
+
+    /* 2. 메인 타이틀 (히어로 섹션) */
+    .hero-section {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+      color: #9ca3af;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* 3. AI 챗봇 컨테이너 (중앙 카드 레이아웃) */
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .chat-card {
+      width: 100%;
+      height: 700px;
+      background-color: #1e2025;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 카드 내부 iframe */
+    .chat-card iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      /* 챗봇 프레임 흰색 배경을 카드에 잘 맞게 정돈 */
+      background: #ffffff; 
+    }
+
+    /* 모바일 가동성 대응 */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.6rem;
+      }
+      .main-content {
+        padding: 10px;
+      }
+      .chat-card {
+        height: 80vh;
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 네비게이션 바 (선택 기능) -->
+  <header>
+    <nav class="nav-container">
+      <a href="#" class="nav-btn">안내 및 일정</a>
+      <a href="#" class="nav-btn">갤러리</a>
+      <a href="#" class="nav-btn active">AI 에이전트</a>
+    </nav>
+  </header>
+
+  <!-- 메인 타이틀 영역 -->
+  <section class="hero-section">
+    <h1 class="hero-title">마음잇다 AI 에이전트</h1>
+    <p class="hero-subtitle">혼자 있는 시간을 조금 더 즐겁고 의미 있게 다가갑니다</p>
+  </section>
+
+  <!-- 챗봇 카드 영역 -->
+  <main class="main-content">
+    <div class="chat-card">
+      <iframe 
+        src="https://copilotstudio.microsoft.com/environments/Default-a5a060c4-00b2-4343-b6c9-23625439a0c0/bots/cr9fa_bot_-uzNTd/webchat?__version__=2&enableFileAttachment=false&cliAgent=true" 
+        allow="microphone; camera">
+      </iframe>
+    </div>
+  </main>
+
+</body>
+</html>
